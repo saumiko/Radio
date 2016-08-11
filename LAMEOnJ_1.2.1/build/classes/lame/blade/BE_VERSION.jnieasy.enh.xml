@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jniEasyEnhancer version="1.0"
+    xmlns="http://www.innowhere.com/jnieasy/enhancer"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.innowhere.com/jnieasy/enhancer 
+        ../../../../schemas/JNIEasy.enh.xsd">    
+    
+    <package name="lame.blade">
+        <imports />
+
+        <class name="BE_VERSION"  type="structure" alignSize="1">            
+            <field name="zHomepage" varConv="byValue" length="129" /> 
+            <field name="btReserved" varConv="byValue" length="125" /> 
+        </class>  
+   
+    </package>
+</jniEasyEnhancer>

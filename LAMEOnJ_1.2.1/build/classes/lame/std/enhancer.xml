@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jniEasyEnhancer version="1.0"
+    xmlns="http://www.innowhere.com/jnieasy/enhancer"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.innowhere.com/jnieasy/enhancer 
+        ../../../../schemas/JNIEasy.enh.xsd">    
+  
+    <include file="lame_global_flags.jnieasy.enh.xml" />            
+    <include file="lame_version_t.jnieasy.enh.xml" />   
+    <include file="mp3data_struct.jnieasy.enh.xml" />      
+    <include file="FileUtil$FILE.jnieasy.enh.xml" />
+    <include file="FileUtil.jnieasy.enh.xml" />    
+    <include file="LameMsgCallback.jnieasy.enh.xml" />     
+        
+    <include file="Lame.jnieasy.enh.xml" />      
+    
+</jniEasyEnhancer>

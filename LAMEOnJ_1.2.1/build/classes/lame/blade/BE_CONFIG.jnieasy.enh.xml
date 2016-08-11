@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jniEasyEnhancer version="1.0"
+    xmlns="http://www.innowhere.com/jnieasy/enhancer"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.innowhere.com/jnieasy/enhancer 
+        ../../../../schemas/JNIEasy.enh.xsd">    
+    
+    <package name="lame.blade">
+        <imports />
+
+        <class name="BE_CONFIG$STRUCT_FORMAT$STRUCT_MP3"  type="structure" alignSize="1" >  <!-- -->          
+        </class> 
+               
+        <class name="BE_CONFIG$STRUCT_FORMAT$STRUCT_LHV1"  type="structure" alignSize="1" >   <!-- -->          
+            <field name="btReserved" varConv="byValue" length="237" /> 
+        </class> 
+        
+        <class name="BE_CONFIG$STRUCT_FORMAT$STRUCT_AAC"  type="structure" alignSize="1" > <!--  --> 
+        </class>        
+        
+        <class name="BE_CONFIG$STRUCT_FORMAT"  type="union" alignSize="1">  
+            <field name="mp3" varConv="byValue" union="begin" />        
+            <field name="LHV1" varConv="byValue" />
+            <field name="aac" varConv="byValue" union="end" />            
+        </class>          
+        
+        <class name="BE_CONFIG"  type="structure" alignSize="1" >   
+            <field name="format" varConv="byValue" />        
+        </class>      
+   
+    </package>
+</jniEasyEnhancer>

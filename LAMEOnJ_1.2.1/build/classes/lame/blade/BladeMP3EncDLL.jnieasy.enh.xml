@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jniEasyEnhancer version="1.0"
+    xmlns="http://www.innowhere.com/jnieasy/enhancer"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.innowhere.com/jnieasy/enhancer 
+        ../../../../schemas/JNIEasy.enh.xsd">    
+    
+    <package name="lame.blade">
+        <imports>
+            <import class="com.innowhere.jnieasy.core.data.*" />
+        </imports>
+
+        <class name="BladeMP3EncDLL"  type="class" 
+                libraryPath="lame_enc.dll">   
+         
+            <method name="beCloseStream" onLibrary="true" callConv="c_call">
+                <return />
+                <params>
+                    <param class="int" />                   
+                </params>
+            </method>            
+            
+           <method name="beDeinitStream" onLibrary="true" callConv="c_call">
+                <return />
+                <params>
+                    <param class="int" />                      
+                    <param class="byte[]" />
+                    <param class="NativeInteger" />                    
+                </params>
+            </method>
+            
+            <method name="beEncodeChunk" onLibrary="true" callConv="c_call">
+                <return />
+                <params>
+                    <param class="int" />
+                    <param class="int" />                    
+                    <param class="short[]" />     
+                    <param class="byte[]" />
+                    <param class="NativeInteger" />                    
+                </params>
+            </method>            
+            
+            <method name="beEncodeChunk" onLibrary="true" callConv="c_call">
+                <return />
+                <params>
+                    <param class="int" />
+                    <param class="int" />                    
+                    <param class="byte[]" />     
+                    <param class="byte[]" />
+                    <param class="NativeInteger" />                    
+                </params>
+            </method>
+            
+            <method name="beEncodeChunkFloatS16NI" onLibrary="true" callConv="c_call">
+                <return />
+                <params>
+                    <param class="int" />
+                    <param class="int" />      
+                    <param class="float[]" />   
+                    <param class="float[]" />               
+                    <param class="byte[]" />
+                    <param class="NativeInteger" />                    
+                </params>
+            </method>            
+            
+            <method name="beFlushNoGap" onLibrary="true" callConv="c_call">
+                <return />
+                <params>
+                    <param class="int" />              
+                    <param class="byte[]" />
+                    <param class="NativeInteger" />                    
+                </params>
+            </method>            
+    
+            <method name="beInitStream" onLibrary="true" callConv="c_call" > 
+                <return />
+                <params>
+                    <param class="BE_CONFIG" />
+                    <param class="NativeInteger" />                    
+                    <param class="NativeInteger" />     
+                    <param class="NativeInteger" />
+                </params>
+            </method>            
+
+            <method name="beVersion" onLibrary="true" callConv="c_call" >
+                <return />
+                <params>
+                    <param class="BE_VERSION" />
+                </params>
+            </method>      
+           
+            <method name="beWriteVBRHeader" onLibrary="true" callConv="c_call" >
+                <return />
+                <params>
+                    <param class="String" />
+                </params>
+            </method>    
+        </class> 
+    </package>
+</jniEasyEnhancer>

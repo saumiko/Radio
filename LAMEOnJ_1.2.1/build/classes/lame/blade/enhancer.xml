@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<jniEasyEnhancer version="1.0"
+    xmlns="http://www.innowhere.com/jnieasy/enhancer"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.innowhere.com/jnieasy/enhancer 
+        ../../../../schemas/JNIEasy.enh.xsd">    
+  
+    <include file="BE_VERSION.jnieasy.enh.xml" />    
+    <include file="BE_CONFIG.jnieasy.enh.xml" />
+    <include file="BladeMP3EncDLL.jnieasy.enh.xml" />
+    
+</jniEasyEnhancer>
