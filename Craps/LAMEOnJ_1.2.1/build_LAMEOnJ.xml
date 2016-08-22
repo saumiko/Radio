@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="test_encoder" name="LAMEOnJ">
+
+    <property name="debug_mode" value="n"/> <!-- y/n -->
+
+    <condition property="debug" value="-Xdebug" else="-Dfoo"> <!-- In Linux is mandatory put anything in <jvmarg> -->
+      <equals arg1="${debug_mode}" arg2="y" />
+    </condition>
+    <condition property="debug" value="" >
+      <not><equals arg1="${debug_mode}" arg2="y" /></not>
+    </condition>
+
+    <condition property="runjdwp" value="-Xrunjdwp:transport=dt_shmem,address=jdbconn,server=y,suspend=y" else="-Dfoo2"> <!-- In Linux is mandatory put anything in <jvmarg> -->
+      <equals arg1="${debug_mode}" arg2="y" />
+    </condition>
+    <condition property="runjdwp" value="">
+      <not><equals arg1="${debug_mode}" arg2="y" /></not>
+    </condition>
+
+    <property file="conf/conf.properties"/>
+    <property name="java.source.version" value="1.4" />
+    <property name="java.target.version" value="1.4" />
+
+    <condition property="dll_directory" value="${program.bin.win32x86}">
+        <os family="windows"/>
+    </condition>
+    <condition property="dll_directory" value="${program.bin.linuxx86}">
+        <equals arg1="${os.name}" arg2="Linux"/>
+    </condition>
+    <condition property="dll_directory" value="${program.bin.macosxx86}">
+        <os family="mac"/>
+    </condition>
+    <condition property="dll_directory" value="${program.bin.solarisx86}">
+         <os name="SunOS" />
+    </condition>
+
+
+    <path id="classPath">
+        <pathelement location="${program.build.classes}"/>
+        <pathelement location="${program.build.test.classes}"/>
+        <pathelement location="${program.bin}/xercesImpl.jar"/>
+        <pathelement location="${program.bin}/xml-apis.jar"/>
+        <pathelement location="${program.bin}/javassist.jar"/>
+        <pathelement location="${program.bin}/bcprov-jdk14-130.jar"/>
+        <pathelement location="${program.bin}/InnowhereUtil.jar"/>
+        <pathelement location="${program.bin}/JNIEasy.jar"/>
+    </path>
+
+
+    <target name="clean">
+        <delete dir="${program.build.classes}" />
+    </target>
+
+    <target name="clean_test">
+        <delete dir="${program.build.test.classes}" />
+    </target>
+
+    <target name="compile">
+        <mkdir dir="${program.build.classes}"/>
+        <copy preservelastmodified="true" todir="${program.build.classes}">
+            <fileset dir="${program.src}" excludes="**/*.java"/> <!-- copy .xml files near .class files -->
+        </copy>
+        <javac debug="true" srcdir="${program.src}" destdir="${program.build.classes}"
+                source="${java.source.version}" target="${java.target.version}">
+            <include name="lame/**"/>
+            <include name="lameonj/**"/>
+            <classpath>
+                <path refid="classPath"/>
+            </classpath>
+        </javac>
+    </target>
+
+    <target name="compile_test" depends="enhancement" > <!--   -->
+        <mkdir dir="${program.build.test.classes}"/>
+        <javac debug="true" srcdir="${program.test}" destdir="${program.build.test.classes}"
+                source="${java.source.version}" target="${java.target.version}">
+            <include name="test/lameonj/**"/>
+            <classpath>
+                <path refid="classPath"/>
+            </classpath>
+        </javac>
+    </target>
+
+
+    <target name="deploy" depends="clean,enhancement" > <!-- clean,  -->
+        <jar basedir="${program.build.classes}" destfile="${program.bin}/LAMEOnJ.jar">
+            <manifest>
+                <attribute name="Built-By" value="${user.name} - Jose Maria Arranz"/>
+                <attribute name="Class-Path" value="JNIEasy.jar InnowhereUtil.jar javassist.jar xml-apis.jar xercesImpl.jar bcprov-jdk14-130.jar"/>
+                <attribute name="Implementation-Title" value="${program.name}" />
+                <attribute name="Implementation-Vendor" value="Innowhere Software Services S.L." />
+                <attribute name="Implementation-Version" value="${program.version}" />
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="deploy_test" depends="clean_test,compile_test" >
+        <jar basedir="${program.build.test.classes}" destfile="${program.bin}/LAMEOnJTest.jar">
+            <manifest>
+               <attribute name="Built-By" value="${user.name} - Jose Maria Arranz"/>
+               <attribute name="Class-Path" value="LAMEOnJ.jar"/>
+               <attribute name="Main-Class" value="test.lameonj.encoder.TestEncoder"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="deploy_distribution" depends="deploy,deploy_test,javadoc" >
+        <property name="LAMEOnJ_dist" value="${program.dist}/LAMEOnJ" />
+        <delete dir="${LAMEOnJ_dist}" />
+        <copy todir="${LAMEOnJ_dist}" preservelastmodified="true" >
+            <fileset dir="${program}" />
+        </copy>
+        <delete dir="${LAMEOnJ_dist}/dist" />
+        <delete dir="${LAMEOnJ_dist}/zip" />
+        <delete dir="${LAMEOnJ_dist}/doc_no_publico" />
+        <!-- To avoid patent problems -->
+        <delete file="${LAMEOnJ_dist}/bin/win32x86/lame.exe" />
+        <delete file="${LAMEOnJ_dist}/bin/win32x86/lame_enc.dll" />
+        <delete file="${LAMEOnJ_dist}/bin/macosxx86/lame" />
+        <delete file="${LAMEOnJ_dist}/bin/macosxx86/libmp3lame.dylib" />
+        <delete file="${LAMEOnJ_dist}/bin/linuxx86/lame" />
+        <delete file="${LAMEOnJ_dist}/bin/linuxx86/libmp3lame.so" />
+        <delete file="${LAMEOnJ_dist}/bin/solarisx86/lame" />
+        <delete file="${LAMEOnJ_dist}/bin/solarisx86/libmp3lame.so" />
+        <delete file="${LAMEOnJ_dist}/bin/JNIEasy.lic" />
+        <zip basedir="${LAMEOnJ_dist}" destfile="${LAMEOnJ_dist}_${program.version}.zip" />
+        <delete dir="${LAMEOnJ_dist}" />
+    </target>
+
+
+    <target name="generateLameXML">
+        <antcall target="clean" />  <!-- To ensure LAME is not enhanced -->
+        <antcall target="compile" />
+        <java classname="lameonj.impl.GenerateLameXML" fork="true">
+            <jvmarg value="${debug}"/>
+            <jvmarg value="${runjdwp}"/>
+            <arg value="${program.src}/lame/std/Lame.jnieasy.enh.xml"/>
+            <classpath>
+                <path refid="classPath"/>
+            </classpath>
+        </java>
+    </target>
+
+
+    <target name="enhancement" depends="compile">  <!--   -->
+        <java classname="com.innowhere.jnieasy.core.enh.NativeEnhancerCmd" fork="true">
+            <jvmarg value="${debug}"/>
+            <jvmarg value="${runjdwp}"/>
+            <sysproperty key="java.library.path" value="${dll_directory}${path.separator}${java.library.path}"/>
+            <sysproperty key="JNIEASY_LICENSE_DIR" value="${program.bin}"/>
+            <arg value="file:${program.build.classes}/lame/enhancer.xml"/>
+            <arg value="${program.build.classes}"/>
+            <classpath>
+                <path refid="classPath"/>
+            </classpath>
+        </java>
+    </target>
+
+    <target name="javadoc" depends="compile">
+        <delete dir="${program.doc.javadoc}" />
+        <javadoc packagenames="lame.*,lameonj.*"
+               sourcepath="${program.src}"
+               excludepackagenames="lameonj.impl.*"
+               defaultexcludes="yes"
+               destdir="${program.doc.javadoc}"
+               author="true"
+               version="true"
+               use="true"
+               windowtitle="${program.name} v${program.javadoc.prog.version}, doc. version v${program.javadoc.doc.version}">
+            <classpath>
+                <path refid="classPath"/>
+            </classpath>
+
+            <doctitle>
+                <![CDATA[
+                <h1>${program.name} v${program.javadoc.prog.version} <font size="-1">(doc. version v${program.javadoc.doc.version})</font></h1>
+                ]]>
+            </doctitle>
+            <bottom>
+                <![CDATA[
+                Copyright © 2006-2008 Jose Maria Arranz. All Rights Reserved.
+                ]]>
+            </bottom>
+        </javadoc>
+    </target>
+
+    <target name="test_encoder" depends="compile_test"  > 
+        <java classname="test.lameonj.encoder.TestEncoder" fork="true">
+            <sysproperty key="java.library.path" value="${dll_directory}${path.separator}${java.library.path}"/>
+            <sysproperty key="JNIEASY_LICENSE_DIR" value="${program.bin}"/>
+            <!--<env key="Path" path="${dll_directory};${env.Path}"/> --> <!-- To load lame_enc.dll -->
+            <jvmarg value="${debug}"/>
+            <jvmarg value="${runjdwp}"/>
+            <classpath>
+                <path refid="classPath"/>
+            </classpath>
+            <arg value="${program.bin}/testcase.wav" />
+            <arg value="${program.bin}/testcase_res" />
+        </java>
+    </target>
+
+    <target name="test_decoder" depends="compile_test"  > 
+        <java classname="test.lameonj.decoder.TestDecoder" fork="true">
+            <sysproperty key="java.library.path" value="${dll_directory}${path.separator}${java.library.path}"/>
+            <sysproperty key="JNIEASY_LICENSE_DIR" value="${program.bin}"/>
+            <!--<env key="Path" path="${dll_directory};${env.Path}"/> --> <!-- To load lame_enc.dll -->
+            <jvmarg value="${debug}"/>
+            <jvmarg value="${runjdwp}"/>
+            <classpath>
+                <path refid="classPath"/>
+            </classpath>
+            <arg value="${program.bin}/testcase.mp3" />
+            <arg value="${program.bin}/testcase_res" />
+        </java>
+    </target>
+
+</project>

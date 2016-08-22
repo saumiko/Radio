@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<jniEasyEnhancer version="1.0" 
+     xmlns="http://www.innowhere.com/jnieasy/enhancer" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.innowhere.com/jnieasy/enhancer ../../../../schemas/JNIEasy.enh.xsd"> 
+
+  <package name="lame.std"> 
+      <imports/>
+
+    <class name="FileUtil" type="class" libraryPath="Windows:MSVCRT;Linux:/lib/libc.so.6;MacOSX:/usr/lib/libc.dylib;SunOS:/lib/libc.so.1"> 
+      <method name="fopen"  onLibrary="true" callConv="c_call"> 
+        <return /> 
+        <params> 
+            <param class="String" /> 
+            <param class="String" />             
+        </params> 
+      </method> 
+      <method name="fclose"  onLibrary="true" callConv="c_call"> 
+        <return /> 
+        <params> 
+          <param class="FileUtil$FILE" /> 
+        </params> 
+      </method> 
+    </class>     
+    
+  </package> 
+</jniEasyEnhancer> 

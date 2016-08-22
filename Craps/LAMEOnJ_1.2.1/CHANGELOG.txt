@@ -1,0 +1,61 @@
+
+* v1.2.1
+
+ - Fixed minor typo error in src/lame/std/enhancer.xml ("File" instead of "FILE") 
+   avoiding recompilation (enhancement) in non-Windows platforms.
+
+* v1.2
+
+ - Added OOP APIs for decoding MP3 to WAV.
+ - Moved classes up removing "com.innowhere" folders/package
+ - Moved encoding APIs to the package "encoder"
+ - Added LAMEOnJBoot, this class is now the root factory (LAMEOnJ is now an interface)
+ - Renamed:
+        LAMEOnJStd to LAMEOnJStdEncoder
+        LAMEOnJ.getLAMEOnJStd to getLAMEOnJStdEncoder
+        LameConfig to EncoderConfig
+        Encoder.getLameConfig to getEncoderConfig
+ - Reorganized packages of test classes.
+
+* v1.1
+
+  - Updated JNIEasy to 1.2.1 : Mac OS X problems are fixed and added Solaris support.
+  - OOP API (wrapping standard LAME methods) now supports mono WAV and PCM streams/files
+  - Changed method names: 
+        Generic.initEncodingInterleaved => Generic.initEncoding
+        Generic.encodeBufferInterleaved => Generic.encodeBuffer
+        StreamEncoder.initEncodingInterleaved => StreamEncoder.initEncoding
+        StreamEncoder.encodeBufferInterleaved => StreamEncoder.encodeBuffer
+  - GenericEncoder.encodeFlush(byte[]) and StreamEncoder now use 
+        Lame.lame_encode_flush_nogap instead of Lame.lame_encode_flush
+     
+* v1.0
+
+  - Wrapped the standard LAME API v3.97 (lame_* methods). Now this is
+    the preferred API.
+
+  - Moved BladeMP3Enc based API to com.innowhere.lame.blade.*
+    and com.innowhere.lameonj.blade.*
+    
+  - BladeMP3Enc object oriented API now uses LAMEOnJBlade as factory. Other
+    minor API changes 
+
+  - Added Linux and MacOS X support (standard LAME API). The standard API
+    works with Windows (lame_enc.dll) too.
+
+  - Updated JNIEasy to v1.2
+
+  - Removed "Not enhanced" exceptions, native methods are declared now as "native"
+
+* v0.9.1.1, 2006 June 13
+
+  - Updated JNIEasy to 1.0 version, needed a recompilation.
+
+* v0.9.1, 2006 May 30
+
+  - Updated JNIEasy to 0.9.1.0 version, needed a recompilation.
+
+* v0.9, 2006 May 23 
+
+First release
+

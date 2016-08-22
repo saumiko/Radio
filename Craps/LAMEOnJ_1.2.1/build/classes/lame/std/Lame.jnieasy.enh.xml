@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+
+<!-- THIS FILE IS GENERATED, use generateLameXML Ant Task to update --> 
+<jniEasyEnhancer version="1.0" 
+     xmlns="http://www.innowhere.com/jnieasy/enhancer" 
+     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+     xsi:schemaLocation="http://www.innowhere.com/jnieasy/enhancer ../../../../schemas/JNIEasy.enh.xsd"> 
+
+  <package name="lame.std"> 
+    <imports> 
+      <import class="com.innowhere.jnieasy.core.data.NativeInteger" /> 
+    </imports> 
+    <class name="Lame" type="class" libraryPath="Windows:lame_enc.dll;MacOSX:libmp3lame.dylib;Linux:libmp3lame.so;SunOS:libmp3lame.so"> 
+      <method name="lame_init" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_init_old" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_num_samples" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_num_samples" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_in_samplerate" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_in_samplerate" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_num_channels" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_num_channels" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_scale" params="lame_global_flags, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_scale" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_scale_left" params="lame_global_flags, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_scale_left" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_scale_right" params="lame_global_flags, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_scale_right" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_out_samplerate" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_out_samplerate" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_analysis" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_analysis" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_bWriteVbrTag" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_bWriteVbrTag" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_decode_only" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_decode_only" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_ogg" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_ogg" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_quality" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_quality" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_mode" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_mode" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_mode_automs" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_mode_automs" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_force_ms" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_force_ms" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_free_format" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_free_format" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_findReplayGain" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_findReplayGain" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_decode_on_the_fly" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_decode_on_the_fly" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_ReplayGain_input" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_ReplayGain_input" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_ReplayGain_decode" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_ReplayGain_decode" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_findPeakSample" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_findPeakSample" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_nogap_total" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_nogap_total" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_nogap_currentindex" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_nogap_currentindex" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_errorf" params="lame_global_flags, LameMsgCallback" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_debugf" params="lame_global_flags, LameMsgCallback" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_msgf" params="lame_global_flags, LameMsgCallback" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_brate" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_brate" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_compression_ratio" params="lame_global_flags, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_compression_ratio" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_preset" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_asm_optimizations" params="lame_global_flags, int, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_copyright" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_copyright" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_original" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_original" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_error_protection" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_error_protection" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_padding_type" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_padding_type" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_extension" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_extension" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_strict_ISO" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_strict_ISO" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_disable_reservoir" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_disable_reservoir" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_quant_comp" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_quant_comp" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_quant_comp_short" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_quant_comp_short" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_experimentalX" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_experimentalX" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_experimentalY" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_experimentalY" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_experimentalZ" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_experimentalZ" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_exp_nspsytune" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_exp_nspsytune" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_msfix" params="lame_global_flags, double" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_msfix" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_exp_nspsytune2_int" params="lame_global_flags, int, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_exp_nspsytune2_real" params="lame_global_flags, int, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_exp_nspsytune2_pointer" params="lame_global_flags, int, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_VBR" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_VBR" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_VBR_q" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_VBR_q" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_VBR_mean_bitrate_kbps" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_VBR_mean_bitrate_kbps" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_VBR_min_bitrate_kbps" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_VBR_min_bitrate_kbps" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_VBR_max_bitrate_kbps" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_VBR_max_bitrate_kbps" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_VBR_hard_min" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_VBR_hard_min" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_preset_expopts" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_lowpassfreq" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_lowpassfreq" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_lowpasswidth" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_lowpasswidth" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_highpassfreq" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_highpassfreq" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_highpasswidth" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_highpasswidth" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_ATHonly" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_ATHonly" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_ATHshort" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_ATHshort" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_noATH" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_noATH" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_ATHtype" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_ATHtype" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_ATHlower" params="lame_global_flags, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_ATHlower" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_athaa_type" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_athaa_type" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_athaa_loudapprox" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_athaa_loudapprox" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_athaa_sensitivity" params="lame_global_flags, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_athaa_sensitivity" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_cwlimit" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_cwlimit" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_allow_diff_short" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_allow_diff_short" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_useTemporal" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_useTemporal" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_interChRatio" params="lame_global_flags, float" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_interChRatio" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_no_short_blocks" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_no_short_blocks" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_force_short_blocks" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_force_short_blocks" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_set_emphasis" params="lame_global_flags, int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_emphasis" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_version" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_encoder_delay" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_encoder_padding" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_framesize" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_mf_samples_to_encode" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_size_mp3buffer" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_frameNum" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_totalframes" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_RadioGain" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_AudiophileGain" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_PeakSample" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_noclipGainChange" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_get_noclipScale" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_init_params" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="get_lame_version" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="get_lame_short_version" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="get_lame_very_short_version" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="get_psy_version" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="get_lame_url" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="get_lame_version_numerical" params="lame_version_t" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_print_config" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_print_internals" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer" params="lame_global_flags, byte[], byte[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer" params="lame_global_flags, short[], short[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer_interleaved" params="lame_global_flags, byte[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer_interleaved" params="lame_global_flags, short[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer_float" params="lame_global_flags, float[], float[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer_long" params="lame_global_flags, int[], int[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer_long2" params="lame_global_flags, int[], int[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_buffer_int" params="lame_global_flags, int[], int[], int, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_flush" params="lame_global_flags, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_encode_flush_nogap" params="lame_global_flags, byte[], int" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_init_bitstream" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_bitrate_hist" params="lame_global_flags, int[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_bitrate_kbps" params="lame_global_flags, int[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_stereo_mode_hist" params="lame_global_flags, int[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_bitrate_stereo_mode_hist" params="lame_global_flags, int[][]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_block_type_hist" params="lame_global_flags, int[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_bitrate_block_type_hist" params="lame_global_flags, int[][]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_mp3_tags_fid" params="lame_global_flags, lame.std.FileUtil$FILE" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_close" params="lame_global_flags" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode_init" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode" params="byte[], int, byte[], byte[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode" params="byte[], int, short[], short[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode_headers" params="byte[], int, byte[], byte[], mp3data_struct" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode_headers" params="byte[], int, short[], short[], mp3data_struct" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode1" params="byte[], int, byte[], byte[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode1" params="byte[], int, short[], short[]" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode1_headers" params="byte[], int, byte[], byte[], mp3data_struct" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode1_headers" params="byte[], int, short[], short[], mp3data_struct" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode1_headersB" params="byte[], int, byte[], byte[], mp3data_struct, NativeInteger, NativeInteger" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode1_headersB" params="byte[], int, short[], short[], mp3data_struct, NativeInteger, NativeInteger" onLibrary="true" callConv="c_call" > 
+      </method> 
+      <method name="lame_decode_exit" params="" onLibrary="true" callConv="c_call" > 
+      </method> 
+    </class> 
+  </package> 
+</jniEasyEnhancer> 
