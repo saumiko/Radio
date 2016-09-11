@@ -24,9 +24,9 @@ public class Client {
     String msg = null;
     Scanner clientScanner;
 
-    public void runClient(String IP) {
+    public void runClient(String IP, String portf) {
         String serverName = IP;
-        int port = 1234;
+        int port = Integer.parseInt(portf);
         AudioProcessor audioProcessor = new AudioProcessor();
         try {
             System.out.println("CLIENT SITE");
@@ -107,11 +107,11 @@ public class Client {
         }
     }
 
-    public static void start(String IP) {
+    public static void start(String IP, String port) {
         //int i;
         //for(i=0;i<2;i++){
             Client client = new Client();
-            client.runClient(IP);
+            client.runClient(IP, port);
             client.voiceIn.start();
         //}
 //        client.textIn.start();

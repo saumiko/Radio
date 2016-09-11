@@ -106,7 +106,7 @@ public class RadioLanBroadCast extends javax.swing.JFrame {
         try {
             // TODO add your handling code here:
             InetAddress IP=InetAddress.getLocalHost();
-            jLabel2.setText("IP: "+IP.getHostAddress()+"  Port: 1024");
+            jLabel2.setText("IP: "+IP.getHostAddress()+"  Port: "+"1024");
         } 
         catch (UnknownHostException ex) {
             Logger.getLogger(RadioLanBroadCast.class.getName()).log(Level.SEVERE, null, ex);

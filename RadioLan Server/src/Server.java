@@ -127,7 +127,8 @@ public class Server {
     }
 
     public static void start() {
-        int port = 1234;
+        for(int port=1234; port<1237;port++){
+        //int port = 1234;
         try {
             Server server = new Server(port);
             server.runServer();
@@ -138,6 +139,7 @@ public class Server {
 
         } catch (IOException e) {
             e.printStackTrace();
+        }
         }
     }
 }

@@ -30,7 +30,7 @@ public class RadioLanClient extends javax.swing.JFrame {
         ip = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        port = new javax.swing.JTextField();
         Listen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,12 +45,11 @@ public class RadioLanClient extends javax.swing.JFrame {
 
         jLabel3.setText("Port");
 
-        jTextField2.setEditable(false);
-        jTextField2.setText("1024");
-        jTextField2.setToolTipText("");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        port.setText("1024");
+        port.setToolTipText("");
+        port.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                portActionPerformed(evt);
             }
         });
 
@@ -80,7 +79,7 @@ public class RadioLanClient extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(port, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(115, 115, 115)
                         .addComponent(Listen)))
@@ -96,7 +95,7 @@ public class RadioLanClient extends javax.swing.JFrame {
                     .addComponent(ip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2)
                     .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(port, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Listen)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -108,18 +107,20 @@ public class RadioLanClient extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void portActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_portActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_portActionPerformed
 
     private void ListenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ListenActionPerformed
         // TODO add your handling code here:
         String IP = "localhost";
+        String ports="nothing";
         try{
             IP = this.ip.getText();
+            ports = this.port.getText();
         }
         catch(Exception e){}
-        ClientThread t = new ClientThread(IP);
+        ClientThread t = new ClientThread(IP, ports);
     }//GEN-LAST:event_ListenActionPerformed
 
     /**
@@ -163,6 +164,6 @@ public class RadioLanClient extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField port;
     // End of variables declaration//GEN-END:variables
 }
