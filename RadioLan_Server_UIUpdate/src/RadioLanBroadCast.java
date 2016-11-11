@@ -41,7 +41,6 @@ public class RadioLanBroadCast extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(500, 333));
-        setPreferredSize(new java.awt.Dimension(500, 333));
         setSize(new java.awt.Dimension(500, 333));
 
         BroadCastUIPanel.setMaximumSize(new java.awt.Dimension(500, 333));
@@ -52,8 +51,9 @@ public class RadioLanBroadCast extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("Impact", 0, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel2.setText("IP:    ---.---.-.-                          Port:    ----");
         BroadCastUIPanel.add(jLabel2);
-        jLabel2.setBounds(70, 280, 380, 0);
+        jLabel2.setBounds(70, 280, 380, 31);
 
         Start.setFont(new java.awt.Font("Lucida Grande", 0, 24)); // NOI18N
         Start.setText("►");
@@ -69,22 +69,20 @@ public class RadioLanBroadCast extends javax.swing.JFrame {
         BroadCastUIPanel.add(Start);
         Start.setBounds(90, 120, 75, 50);
 
-        Stop.setFont(new java.awt.Font("Lucida Grande", 0, 48)); // NOI18N
+        Stop.setFont(new java.awt.Font("Lucida Grande", 0, 40)); // NOI18N
         Stop.setText("■");
         Stop.setMaximumSize(new java.awt.Dimension(75, 50));
         Stop.setMinimumSize(new java.awt.Dimension(75, 50));
         Stop.setPreferredSize(new java.awt.Dimension(75, 50));
-        Stop.setSize(new java.awt.Dimension(75, 50));
         Stop.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 StopActionPerformed(evt);
             }
         });
         BroadCastUIPanel.add(Stop);
-        Stop.setBounds(90, 180, 90, 30);
+        Stop.setBounds(90, 180, 75, 50);
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/broadcast.jpg"))); // NOI18N
-        jLabel3.setPreferredSize(new java.awt.Dimension(500, 333));
         BroadCastUIPanel.add(jLabel3);
         jLabel3.setBounds(0, 0, 500, 333);
         BroadCastUIPanel.add(jLabel1);
@@ -116,6 +114,7 @@ public class RadioLanBroadCast extends javax.swing.JFrame {
             // TODO add your handling code here:
             InetAddress IP=InetAddress.getLocalHost();
             //jLabel2.setText("IP: "+IP.getHostAddress()+"  Port: "+"1234");
+            //jLabel2.setText("IP:    "+"---.---.-.-"+"                          Port:    "+"----");
         } 
         catch (UnknownHostException ex) {
             Logger.getLogger(RadioLanBroadCast.class.getName()).log(Level.SEVERE, null, ex);

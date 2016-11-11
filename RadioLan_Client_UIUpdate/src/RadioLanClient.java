@@ -35,13 +35,9 @@ public class RadioLanClient extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("RadioLan");
         setBackground(new java.awt.Color(0, 0, 0));
-        setMaximumSize(new java.awt.Dimension(500, 250));
-        setPreferredSize(new java.awt.Dimension(500, 250));
         setResizable(false);
-        setSize(new java.awt.Dimension(500, 250));
 
         ClientUIPanel.setPreferredSize(new java.awt.Dimension(500, 250));
-        ClientUIPanel.setSize(new java.awt.Dimension(500, 250));
         ClientUIPanel.setLayout(null);
 
         ip.setBackground(new java.awt.Color(83, 83, 83));
@@ -69,7 +65,6 @@ public class RadioLanClient extends javax.swing.JFrame {
         Listen.setFont(new java.awt.Font("Impact", 1, 18)); // NOI18N
         Listen.setText("►");
         Listen.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        Listen.setSize(new java.awt.Dimension(80, 32));
         Listen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 ListenActionPerformed(evt);
