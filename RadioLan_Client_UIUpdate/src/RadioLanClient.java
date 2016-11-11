@@ -35,7 +35,10 @@ public class RadioLanClient extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("RadioLan");
         setBackground(new java.awt.Color(0, 0, 0));
+        setMaximumSize(new java.awt.Dimension(500, 250));
         setPreferredSize(new java.awt.Dimension(500, 250));
+        setResizable(false);
+        setSize(new java.awt.Dimension(500, 250));
 
         ClientUIPanel.setPreferredSize(new java.awt.Dimension(500, 250));
         ClientUIPanel.setSize(new java.awt.Dimension(500, 250));
@@ -73,9 +76,9 @@ public class RadioLanClient extends javax.swing.JFrame {
             }
         });
         ClientUIPanel.add(Listen);
-        Listen.setBounds(210, 200, 80, 32);
+        Listen.setBounds(210, 180, 80, 32);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Radio.jpg"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Radio.png"))); // NOI18N
         ClientUIPanel.add(jLabel4);
         jLabel4.setBounds(0, 0, 500, 250);
         jLabel4.getAccessibleContext().setAccessibleName("PanelLabel");
